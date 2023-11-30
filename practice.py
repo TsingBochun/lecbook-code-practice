@@ -1,8 +1,16 @@
-# The second, sum_cubes, computes the sum of the cubes of natural numbers up to n.
-def sum_cubes(n):
-        total, k = 0, 1
-        while k <= n:
-            total, k = total + k*k*k, k + 1
-        return total
+# 求和练习,(高阶函数)
+def summation(n, term):
+    total, k = 0, 1
+    while k <= n:
+        total, k = total + term(k), k + 1
+    return total
 
-print(sum_cubes(100))
+def cube(x):
+    return x*x*x
+
+def sum_cubes(n):
+    return summation(n, cube)
+
+result = sum_cubes(3)
+
+print(result)
